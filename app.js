@@ -95,7 +95,11 @@ app.post("/loc" , function(req,res){
             //console.log(ampm);
             for(var i=0;i<3;i++)
             {
-                if((hours+3*i) === 12)
+                if((hours+3*i) === 12 && ampm===am)
+                {
+                    d[i].hours = 0;
+                }
+                else if((hours+3*i) === 12 && ampm===pm))
                 {
                     d[i].hours = 12;
                 }
