@@ -65,7 +65,7 @@ app.post("/loc" , function(req,res){
             }
             else
             {
-                res.send("City Not Found!");
+                res.send("Turn your Location on");
             }
         }
     });
