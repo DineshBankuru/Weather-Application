@@ -1,0 +1,37 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #ffffff;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
+    }
+
+
+    .ms-1
+    {
+        padding-left: 15px;
+    }
+
+    .main-block {
+        display:table;
+      }
+      .sub-block {
+        display:table-row;
+      }
+      
+      .sub-block > * {
+        display:table-cell;
+        padding:10px;
+      }
+      .part1 {
+        text-align:right;
+      }
+
+    .two
+    {
+        overflow-x: auto;
+        white-space: nowrap;
+    }

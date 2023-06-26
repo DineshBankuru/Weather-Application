@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7a31bb0727.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body style="background-color: #C1CFEA;">
+ 
+    <section class="vh-100" >
+        <div class="container py-5 h-100">
+      
+          <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+            <div class="col-md-9 col-lg-7 col-xl-5">
+      
+              <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+                <div class="card-body p-4">
+      
+                  <div id="demo1" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!-- <ul class="carousel-indicators mb-0">
+                      <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo1" data-slide-to="1"></li>
+                      <li data-target="#demo1" data-slide-to="2"></li>
+                    </ul> -->
+                    <!-- Carousel inner -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="d-flex justify-content-between mb-4 pb-2">
+                          <div>
+                            <h2 class="display-2"><strong><%=first.temp %>°C</strong></h2>
+                            <h3 class="text-muted mb-0"><%=first.description%></h3>
+                            <p class="text-muted mb-0"><%=first.place %>  <%=first.country %></p>
+                            <p class="text-muted mb-0"><%=newD%></p>
+                          </div>
+                          <div>
+                            <img src=<%=first.icon%>
+                              width="150px">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+              
+              <div class="container-fluid">
+              <div class="row flex-row flex-nowrap">
+              <div class="card mb-4" style="border-radius: 25px;">
+                <div class="card-body p-4">
+      
+                  <div id="demo2" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!-- <ul class="carousel-indicators mb-0">
+                      <li data-target="#demo2" data-slide-to="0"></li>
+                      <li data-target="#demo2" data-slide-to="1" class="active"></li>
+                      <li data-target="#demo2" data-slide-to="2"></li>
+                    </ul> -->
+                    <!-- Carousel inner -->
+                   
+                        <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
+                          <div class="flex-column">
+                            <p class="small"><strong><%=d[0].temp%>°C</strong></p>
+                            <!-- <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i> -->
+                            <img src= <%=d[0].icon %> >
+                            <p class="mb-0"><strong><%=d[0].hours%>:00</strong></p>
+                            <p class="mb-0 text-muted" style="font-size: .65rem;"><%= d[0].ampm%></p>
+                          </div>
+                          <div class="flex-column">
+                            <p class="small"><strong><%=d[1].temp%>°C</strong></p>
+                            <!-- <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i> -->
+                            <img src= <%=d[1].icon %> >
+                            <p class="mb-0"><strong><%=d[1].hours%>:00</strong></p>
+                            <p class="mb-0 text-muted" style="font-size: .65rem;"><%= d[1].ampm%></p>
+                          </div>
+                          <div class="flex-column">
+                            <p class="small"><strong><%=d[2].temp%>°C</strong></p>
+                            <!-- <i class="fas fa-cloud fa-2x mb-3" style="color: #ddd;"></i> -->
+                            <img src= <%=d[2].icon %> >
+                            <p class="mb-0"><strong><%=d[2].hours%>:00</strong></p>
+                            <p class="mb-0 text-muted" style="font-size: .65rem;"><%= d[2].ampm%></p>
+                          </div>
+                          <!-- <div class="flex-column">
+                            <p class="small"><strong><%=d[3].temp%>°C</strong></p>
+                            <i class="fas fa-cloud fa-2x mb-3" style="color: #ddd;"></i>
+                            <img src= <%=d[3].icon %> >
+                            <p class="mb-0"><strong><%=d[3].hours%>:00</strong></p>
+                            <p class="mb-0 text-muted" style="font-size: .65rem;"><%= d[3].ampm%></p>
+                          </div>
+                          <div class="flex-column">
+                            <p class="small"><strong><%=d[4].temp%>°C</strong></p>
+                            <i class="fas fa-cloud-showers-heavy fa-2x mb-3" style="color: #ddd;"></i>
+                            <img src= <%=d[4].icon %> >
+                            <p class="mb-0"><strong><%=d[4].hours%>:00</strong></p>
+                            <p class="mb-0 text-muted" style="font-size: .65rem;"><%= d[4].ampm%></p>
+                          </div> -->
+                        </div>
+                     
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="card" style="border-radius: 25px;">
+                <div class="card-body p-4">
+                  <div class="main-block">
+                    <div class="sub-block">
+                      <i class="fa-solid fa-wind"></i><span class="ms-1">  Wind Speed :  <%=all.one%> m/sec
+                      </span>
+                    </div>
+                    <div class="sub-block">
+                      <i class="fa-solid fa-droplet"></i><span class="ms-1">    Humidity : <%=all.two%> %
+                      </span>
+                    </div>
+                    <div class="sub-block">
+                      <img src="img/one.png" style="height: 35px ; width: 35px" class="fas"></a><span class="ms-1">  Pressure :  <%=all.three%> hPa
+                      </span>
+                    </div>
+                    <div class="sub-block">
+                      <i class="fas fa-temperature-high"></i><span class="ms-1">    Max Temp :  <%=all.four%>°C
+                      </span>
+                    </div>
+                    <div class="sub-block">
+                      <i class="fas fa-temperature-low"></i><span class="ms-1">   Min Temp  :  <%=all.five%>°C
+                      </span>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+     
+</body>
+</html>
