@@ -23,7 +23,7 @@ let first={temp:"" , icon:"" , place:"", country:"" , description:""};
 var d = [{hours: 0 , ampm : "" , temp: "" , icon:""},{hours: 0 , ampm : "" , temp: "" , icon:""},{hours: 0 , ampm : "" , temp: "" , icon:""},{hours: 0 , ampm : "" , temp: "" , icon:""},{hours: 0 , ampm : "" , temp: "" , icon:""}];
 let all ={one:"" , two:"" , three:"" , four:"" , five:""};
 var hour="";
-var ampm;
+var ampm="";
 var hours=0;
 var city="";
 var lat,long;
@@ -93,6 +93,7 @@ app.post("/loc" , function(req,res){
             ampm = ampm.slice(0,2);
             //console.log(hours);
             //console.log(ampm);
+            
             for(var i=0;i<3;i++)
             {
                 if((hours+3*i) === 12 && ampm==="am")
@@ -110,7 +111,7 @@ app.post("/loc" , function(req,res){
                 d[i].temp = parseInt(w.list[i].main.temp);
                 d[i].icon = "https://openweathermap.org/img/wn/"+w.list[i].weather[0].icon+"@2x.png";
                 //console.log(d[i].icon);
-                var check = (hours+3*i);
+                var check = ((hours%12)+3*i);
                 if( check >= 12)
                 {
                     if(ampm ==="pm")
