@@ -215,7 +215,8 @@ if(flag===1)
         else 
         {
             let w = JSON.parse(body);
-            
+            if(w.cod === 200)
+            {
             let options = {
                 timeZone: find(lat,long),
                 hour: 'numeric'
@@ -275,7 +276,8 @@ if(flag===1)
             res.render("final" , {first: first , d:d , all:all , newD: newD});
             //res.send("Hi");
         }
-    
+        }
+        
     });
 }
 });
