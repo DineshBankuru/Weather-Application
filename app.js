@@ -99,11 +99,11 @@ app.post("/loc" , function(req,res){
             {
                 if((hours+3*i) === 12 && ampm==="am")
                 {
-                    d[i].hours = 0;
+                    d[i].hours = 12;
                 }
                 else if((hours+3*i) === 12 && ampm==="pm")
                 {
-                    d[i].hours = 12;
+                    d[i].hours = 0;
                 }
                 else
                 {
@@ -115,11 +115,11 @@ app.post("/loc" , function(req,res){
                 var check = ((hours%12)+3*i);
                 if( check >= 12)
                 {
-                    if(ampm ==="pm")
+                    if(ampm == "pm")
                     {
                         d[i].ampm = "am";
                     }
-                    else if(ampm ==="am")
+                    else if(ampm == "am")
                     {
                         d[i].ampm="pm";
                     }
@@ -214,11 +214,11 @@ app.post("/",function(req,res){
             {
                 if((hours+3*i) === 12 && ampm==="am")
                 {
-                    d[i].hours = 0;
+                    d[i].hours = 12;
                 }
                 else if((hours+3*i) === 12 && ampm==="pm")
                 {
-                    d[i].hours = 12;
+                    d[i].hours = 0;
                 }
                 else
                 {
@@ -230,11 +230,11 @@ app.post("/",function(req,res){
                 var check = (hours%12+3*i);
                 if( check >= 12)
                 {
-                    if(ampm ==="pm")
+                    if(ampm == "pm")
                     {
                         d[i].ampm = "am";
                     }
-                    else if(ampm ==="am")
+                    else if(ampm == "am")
                     {
                         d[i].ampm="pm";
                     }
