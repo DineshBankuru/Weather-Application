@@ -65,7 +65,7 @@ app.post("/loc" , function(req,res){
             }
             else
             {
-                res.send("Turn your Location on");
+                res.render("notfound");
             }
         }
     });
@@ -82,8 +82,7 @@ app.post("/loc" , function(req,res){
         else 
         {
             let w = JSON.parse(body);
-            if(w.cod === 200)
-            {
+           
             let options = {
                 timeZone: find(lat,long),
                 hour: 'numeric'
@@ -143,7 +142,7 @@ app.post("/loc" , function(req,res){
             //console.log(details);
             res.render("final" , {first: first , d:d , all:all , newD: newD});
             //res.send("Hi");
-        }
+        
         }
     });
 
