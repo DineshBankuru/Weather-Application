@@ -82,6 +82,8 @@ app.post("/loc" , function(req,res){
         else 
         {
             let w = JSON.parse(body);
+            if(w.cod === 200)
+            {
             let options = {
                 timeZone: find(lat,long),
                 hour: 'numeric'
@@ -141,6 +143,7 @@ app.post("/loc" , function(req,res){
             //console.log(details);
             res.render("final" , {first: first , d:d , all:all , newD: newD});
             //res.send("Hi");
+        }
         }
     });
 
@@ -210,7 +213,11 @@ app.post("/",function(req,res){
             //console.log(ampm);
             for(var i=0;i<3;i++)
             {
-                if((hours+3*i) === 12)
+                if((hours+3*i) === 12 && ampm==="am")
+                {
+                    d[i].hours = 0;
+                }
+                else if((hours+3*i) === 12 && ampm==="pm")
                 {
                     d[i].hours = 12;
                 }
@@ -221,7 +228,7 @@ app.post("/",function(req,res){
                 d[i].temp = parseInt(w.list[i].main.temp);
                 d[i].icon = "https://openweathermap.org/img/wn/"+w.list[i].weather[0].icon+"@2x.png";
                 //console.log(d[i].icon);
-                var check = (hours+3*i);
+                var check = (hours%12+3*i);
                 if( check >= 12)
                 {
                     if(ampm ==="pm")
