@@ -73,8 +73,9 @@ app.post("/loc" , function(req,res){
             }
             else
             {
-                res.render("location");
                 flag=0;
+                res.render("location");
+                
             }
         }
     });
@@ -196,8 +197,9 @@ app.post("/",function(req,res){
             }
             else
             {
-                res.render("notfound");
                 flag=0;
+                res.render("notfound");
+                
             }
         }
     });
