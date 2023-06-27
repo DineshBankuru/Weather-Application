@@ -174,7 +174,7 @@ app.post("/",function(req,res){
         else 
         {
             let w = JSON.parse(body);
-            console.log(w);
+            //console.log(w);
             if(w.cod === 200)
             {
                 first.temp = w.main.temp;
@@ -210,11 +210,13 @@ app.post("/",function(req,res){
         if (err) {
            // res.send("Error");
              //res.render("location");
+            console.log("Error");
         }
         else 
         {
             let w = JSON.parse(body);
-            if(w.cod === 200)
+            //console.log(w);
+            if(w.cod === "200")
             {
             let options = {
                 timeZone: find(lat,long),
@@ -225,7 +227,7 @@ app.post("/",function(req,res){
             hours = Number( hour.substring(0, hour.indexOf(' ')));
             ampm = String(hour.substring(hour.indexOf(' ') + 1)); 
             ampm = ampm.slice(0,2);
-            console.log(hours);
+            //console.log(hours);
             //console.log(ampm);
             for(var i=0;i<3;i++)
             {
