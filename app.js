@@ -30,6 +30,12 @@ var lat,long;
 
 
 app.post("/loc" , function(req,res){
+
+    if(req.body.lat === "")
+    {
+        res.render("location");
+    }
+    else{
     let url = "http://api.openweathermap.org/data/2.5/weather?lat="+req.body.lat+"&lon="+req.body.lon+"&appid="+process.env.API_KEY+"&units=metric";
 
     request(url, function(err, response, body) {
@@ -145,7 +151,7 @@ app.post("/loc" , function(req,res){
         
         }
     });
-
+    }
 });
 
 
