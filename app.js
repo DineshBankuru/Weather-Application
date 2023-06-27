@@ -80,7 +80,7 @@ app.post("/loc" , function(req,res){
         }
     });
     
-if(flag===1){    
+    
     url = "http://api.openweathermap.org/data/2.5/forecast?lat="+req.body.lat+"&lon="+req.body.lon+"&appid="+process.env.API_KEY+"&units=metric";
 
     //console.log(url);
@@ -93,7 +93,7 @@ if(flag===1){
         else 
         {
             let w = JSON.parse(body);
-           
+           if(w.cod === "200"){
             let options = {
                 timeZone: find(lat,long),
                 hour: 'numeric'
@@ -153,10 +153,10 @@ if(flag===1){
             //console.log(details);
             res.render("final" , {first: first , d:d , all:all , newD: newD});
             //res.send("Hi");
-        
+        }
         }
     });
-    }
+    
     }
 });
 
