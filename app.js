@@ -203,8 +203,7 @@ app.post("/",function(req,res){
             }
         }
     });
-if(flag===1)
-{
+
     url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+process.env.API_KEY+"&units=metric";
 
     request(url, function(err, response, body) {
@@ -226,7 +225,7 @@ if(flag===1)
             hours = Number( hour.substring(0, hour.indexOf(' ')));
             ampm = String(hour.substring(hour.indexOf(' ') + 1)); 
             ampm = ampm.slice(0,2);
-            //console.log(hours);
+            console.log(hours);
             //console.log(ampm);
             for(var i=0;i<3;i++)
             {
@@ -279,7 +278,7 @@ if(flag===1)
         }
         
     });
-}
+
 });
 
 
