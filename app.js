@@ -27,7 +27,7 @@ var ampm="";
 var hours=0;
 var city="";
 var lat,long;
-
+var flag=0;
 
 app.post("/loc" , function(req,res){
 
@@ -68,16 +68,18 @@ app.post("/loc" , function(req,res){
                 all.three=w.main.pressure;
                 all.four=w.main.temp_max;
                 all.five=w.main.temp_min;
+                flag=1;
 
             }
             else
             {
                 res.render("location");
+                flag=0;
             }
         }
     });
     
-    
+if(flag===1){    
     url = "http://api.openweathermap.org/data/2.5/forecast?lat="+req.body.lat+"&lon="+req.body.lon+"&appid="+process.env.API_KEY+"&units=metric";
 
     //console.log(url);
@@ -154,6 +156,7 @@ app.post("/loc" , function(req,res){
         }
     });
     }
+    }
 });
 
 
@@ -189,15 +192,17 @@ app.post("/",function(req,res){
                 all.three=w.main.pressure;
                 all.four=w.main.temp_max;
                 all.five=w.main.temp_min;
-
+                flag=1;
             }
             else
             {
                 res.render("notfound");
+                flag=0;
             }
         }
     });
-
+if(flag===1)
+{
     url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+process.env.API_KEY+"&units=metric";
 
     request(url, function(err, response, body) {
@@ -270,7 +275,7 @@ app.post("/",function(req,res){
         }
     
     });
-
+}
 });
 
 
