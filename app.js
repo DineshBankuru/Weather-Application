@@ -65,7 +65,7 @@ app.post("/loc" , function(req,res){
             }
             else
             {
-                res.render("notfound");
+                res.render("location");
             }
         }
     });
