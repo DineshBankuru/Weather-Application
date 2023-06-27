@@ -97,11 +97,11 @@ app.post("/loc" , function(req,res){
             
             for(var i=0;i<3;i++)
             {
-                if((hours+3*i) === 12 && ampm==="am")
+                if((hours+3*i) === 12 && ampm==="AM")
                 {
                     d[i].hours = 12;
                 }
-                else if((hours+3*i) === 12 && ampm==="pm")
+                else if((hours+3*i) === 12 && ampm==="PM")
                 {
                     d[i].hours = 0;
                 }
@@ -115,13 +115,13 @@ app.post("/loc" , function(req,res){
                 var check = ((hours%12)+3*i);
                 if( check >= 12)
                 {
-                    if(ampm == "pm")
+                    if(ampm == "PM")
                     {
-                        d[i].ampm = "am";
+                        d[i].ampm = "AM";
                     }
-                    else if(ampm == "am")
+                    else if(ampm == "AM")
                     {
-                        d[i].ampm="pm";
+                        d[i].ampm="PM";
                     }
                 }
                 else
@@ -212,11 +212,11 @@ app.post("/",function(req,res){
             //console.log(ampm);
             for(var i=0;i<3;i++)
             {
-                if((hours+3*i) === 12 && ampm==="am")
+                if((hours+3*i) === 12 && ampm==="AM")
                 {
                     d[i].hours = 12;
                 }
-                else if((hours+3*i) === 12 && ampm==="pm")
+                else if((hours+3*i) === 12 && ampm==="PM")
                 {
                     d[i].hours = 0;
                 }
@@ -230,13 +230,13 @@ app.post("/",function(req,res){
                 var check = (hours%12+3*i);
                 if( check >= 12)
                 {
-                    if(ampm == "pm")
+                    if(ampm == "PM")
                     {
-                        d[i].ampm = "am";
+                        d[i].ampm = "AM";
                     }
-                    else if(ampm == "am")
+                    else if(ampm == "AM")
                     {
-                        d[i].ampm="pm";
+                        d[i].ampm="PM";
                     }
                 }
                 else
