@@ -168,12 +168,12 @@ app.post("/",function(req,res){
         //console.log(body);
         if (err) {
             //res.send("Error");
-            // res.render("location");
+            res.render("notfound");
         }
         else 
         {
             let w = JSON.parse(body);
-           // console.log(w);
+            console.log(w);
             if(w.cod === 200)
             {
                 first.temp = w.main.temp;
