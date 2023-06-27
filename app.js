@@ -53,10 +53,10 @@ app.post("/loc" , function(req,res){
             {
                 first.temp = w.main.temp;
                 first.icon = "https://openweathermap.org/img/wn/"+w.weather[0].icon+"@2x.png";
-                first.place = "";
+                first.place = w.name;
                 city=(first.place);
                 let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
-                first.country = "";
+                first.country = regionNames.of(w.sys.country);
                 // first.country = w.sys.country;
                 first.description =  w.weather[0].description.charAt(0).toUpperCase() + w.weather[0].description.slice(1);
 
