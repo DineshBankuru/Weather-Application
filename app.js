@@ -42,8 +42,8 @@ app.post("/loc" , function(req,res){
         // On return, check the json data fetched
         //console.log(body);
         if (err) {
-            //res.send("Error");
-            res.render("location");
+            res.send("Error");
+           // res.render("location");
         }
         else 
         {
@@ -84,8 +84,8 @@ app.post("/loc" , function(req,res){
 
     request(url, function(err, response, body) {
         if (err) {
-           // res.send("Error");
-            res.render("location");
+            res.send("Error");
+           // res.render("location");
         }
         else 
         {
@@ -164,8 +164,8 @@ app.post("/",function(req,res){
         // On return, check the json data fetched
         //console.log(body);
         if (err) {
-           // res.send("Error");
-             res.render("location");
+            res.send("Error");
+            // res.render("location");
         }
         else 
         {
@@ -202,8 +202,8 @@ app.post("/",function(req,res){
 
     request(url, function(err, response, body) {
         if (err) {
-           // res.send("Error");
-             res.render("location");
+            res.send("Error");
+             //res.render("location");
         }
         else 
         {
